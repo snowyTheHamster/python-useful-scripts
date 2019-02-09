@@ -2,7 +2,9 @@
 
 A stupid python script using **pyautogui**.
 
-Mouse keeps moving so the Youtube navbar stays open during fullscreen Playback.
+We will have **pyautogui** contantly move the mouse so the navigation bar remains open while watching Youtube videos in Fullscreen mode.
+
+Watch Youtube in Fullscreen while still keeping track of the time remaining on the video.
 
 ## How to use this script
 
@@ -51,6 +53,10 @@ The mouse should keep moving near the top left corner of the screen.
 ### How to edit
 
 Open begin.py and change the settings such as the time or mouse location.
+
+I set the loop to 9999 but you can change it to an infinite loop if you want.
+
+I usually just interupt the script when changing clips.
 
 
 ### How to stop the script
