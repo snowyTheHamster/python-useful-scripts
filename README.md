@@ -1,11 +1,14 @@
-# youtube show navbar during fullscreen mode
+# Display Navbar during Youtube fullscreen mode
 
-A python script that uses the pyautogui library to move the mouse constantly at to keep the youtube navbar open during fullscreen mode.
+A stupid python script using **pyautogui**.
+
+Mouse keeps moving so the Youtube navbar stays open during fullscreen Playback.
 
 ## How to use this script
 
 - Install python
-- Create a project folder and clone this repo:
+- Create a project folder
+- Clone this repo:
 
 ```
 git clone https://github.com/snowyTheHamster/youtube-fullscreen-navbar.git .
@@ -17,19 +20,19 @@ git clone https://github.com/snowyTheHamster/youtube-fullscreen-navbar.git .
 virtualenv .venv
 ```
 
-- activate the virtual environment:
+- Activate virtual environment (mac, linux users):
 
 ```
 source .venv/bin/activate
 ```
 
-or for windows:
+- Activate virtual environment (windows users):
 
 ```
 source .venv/script/activate
 ```
 
-- install the required packages from the requirements.txt file:
+- Install required packages from the requirements.txt file:
 
 ```
 pip install -r requirements.txt
@@ -43,18 +46,18 @@ pip install -r requirements.txt
 python begin.py
 ```
 
-The mouse should move to near the top left corner of the screen and keep moving.
+The mouse should keep moving near the top left corner of the screen.
 
 ### How to edit
 
-To edit the script, open begin.py and change the settings such as time or mouse location.
+Open begin.py and change the settings such as the time or mouse location.
 
 
 ### How to stop the script
 
 You can stop the script by:
 
-- push the mouse to the top left corner of the screen
+- Move the mouse to the top left corner of the screen
 - open the terminal running the script and press ctrl+c
 
 Enjoy watching Youtube in Fullscreen mode with the navbar.
