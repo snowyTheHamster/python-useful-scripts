@@ -30,6 +30,10 @@ pag.click(button='left')
 pag.moveTo(1400, 290, duration = 0.5)
 pag.click(button='left')
 
+#click on hdmi output
+pag.moveTo(1400, 490, duration = 0.5)
+pag.click(button='left')
+
 #click exit
 pag.moveTo(1457, 212, duration = 0.5)
 pag.click(button='left')
