@@ -8,6 +8,8 @@ print('move cursor to top left of screen to quit.')
 print('Press Ctrl-C to quit.')
 print('Press Ctrl-Alt-Del to quit.')
 
+time.sleep(5)
+
 for i in range(9999):
     pag.moveTo(3, 3, duration = 1.0)
     time.sleep(0.5)
