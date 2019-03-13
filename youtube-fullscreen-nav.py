@@ -10,8 +10,8 @@ print('Press Ctrl-Alt-Del to quit.')
 
 time.sleep(5)
 
-for i in range(9999):
-    pag.moveTo(3, 3, duration = 1.0)
-    time.sleep(0.5)
-    pag.moveTo(4, 4, duration = 1.0)
-    time.sleep(0.5)
+for i in range(99999):
+    pag.moveTo(3, 3, duration = 0.5)
+    time.sleep(0.3)
+    pag.moveTo(4, 4, duration = 0.5)
+    time.sleep(0.3)
