@@ -1,11 +1,10 @@
 # Useful Python Scripts ?
 
+A bunch of automated python scripts using pyautogui and pyinstaller.
 
-# youtube-fullscreen-nav.py
+## youtube-fullscreen-nav.py
 
 Display the Navbar during Youtube fullscreen mode.
-
-A stupid python script using **pyautogui**.
 
 We'll have **pyautogui** contantly move the mouse so the navigation bar remains open while watching Youtube videos in Fullscreen mode.
 

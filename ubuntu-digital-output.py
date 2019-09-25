@@ -1,5 +1,4 @@
-#stupid script that keeps mouse moving to prevent youtube 
-# navbar hiding in fullscreen mode
+# Toggles digital output option in Ubuntu 18.04
 import pyautogui as pag
 import time
 
