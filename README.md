@@ -125,3 +125,27 @@ sudo apt-get install python3-dev
 ```
 
 You can now run the script by double clicking on the newly made file.
+
+
+## python download youtube video or audio
+
+#### installation:
+```
+pip install youtube-dl
+sudo apt-get install ffmpeg
+```
+
+#### to dl & convert to audio (replace video id):
+```
+python -m youtube_dl --restrict-filenames --ignore-errors -x --audio-format mp3 7ku4WbWEQPU
+```
+
+#### to get formats for vid:
+```
+python -m youtube_dl --restrict-filenames --list-formats 7ku4WbWEQPU
+```
+
+#### to dl vid with specific format:
+```
+python -m youtube_dl --restrict-filenames 7ku4WbWEQPU - 249
+```
