@@ -1,4 +1,4 @@
-# Converts magento's customer_entity & customer_address_entity tables into prestashops ps_customer table.
+# Converts magento's customer_entity & customer_address_entity tables into prestashops ps_customer & ps_address tables.
 
 ## 1. use this sql to get magento's user data, and export as csv:
 ## SELECT ce.entity_id, ce.prefix, ce.firstname, ce.lastname, ce.email, ce.store_id, ce.created_at, ce.updated_at, mr.points_balance, cae.city, cae.company, cae.country_id, cae.postcode, cae.region, cae.street, cae.telephone FROM magento_reward as mr INNER JOIN customer_entity as ce ON mr.customer_id=ce.entity_id INNER JOIN customer_address_entity as cae ON ce.entity_id=cae.parent_id
