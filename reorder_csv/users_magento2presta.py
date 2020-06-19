@@ -1,6 +1,6 @@
 import csv
 
-with open('magento_reward_sample.csv') as csvfile:
+with open('magento_reward.csv', encoding="utf8") as csvfile:
     # print([
     #     'id_customer', #0
     #     'id_shop_group',
@@ -38,7 +38,7 @@ with open('magento_reward_sample.csv') as csvfile:
     #     ])
     readCSV = csv.reader(csvfile, delimiter=',')
 
-    with open('output_file.csv', mode='w', newline='') as output_file:
+    with open('output_file.csv', mode='w', newline='', encoding="utf8") as output_file:
         output_writer = csv.writer(output_file, delimiter=';', quoting=csv.QUOTE_MINIMAL)
         next(readCSV) # skip first line
         for row in readCSV:
