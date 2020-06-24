@@ -6,6 +6,7 @@
 
 import csv
 
+
 with open('magento_reward.csv', encoding="utf8") as csvfile:
     #     ps_customer schema:
     #     'id_customer', 'id_shop_group', 'id_shop', 'id_gender', 'id_default_group', 0 - 4
@@ -19,21 +20,33 @@ with open('magento_reward.csv', encoding="utf8") as csvfile:
     with open('output_ps_customer.csv', mode='w', newline='', encoding="utf8") as output_file:
         output_writer = csv.writer(output_file, delimiter=';', quoting=csv.QUOTE_MINIMAL)
         next(readCSV) # skip first line
-        for row in readCSV:
-            output_writer.writerow([f'{row[0]},1,1,0,3,{row[5]},0,{row[10]},,,{row[2]},{row[3]},{row[4]},,2020-04-15 17:08:32,NULL,1,,0,0,0,,1,0,0,{row[6]},{row[7]},,NULL'])
+
+        for index, row in enumerate(readCSV):
+            # skip rows with 0 points
+            if row[8] == '0':
+                continue
+            else:
+
+                # assigns value for gender
+                if row[1] in ('Mr', 'Mr ', 'MR', '先生'):
+                    row[1] = 1
+                elif row[1] in ('Ms', 'Mrs', '女士', 'Ms.', '太太'):
+                    row[1] = 2
+                else:
+                    row[1] = 'NULL'
+
+                output_writer.writerow([f'{row[0]},1,1,{row[1]},3,{row[5]},0,NULL,,,{row[2]},{row[3]},{row[4]},,2020-04-15 17:08:32,NULL,1,,0,0,0,,1,0,0,{row[6]},{row[7]},,NULL'])
 
 
 with open('magento_reward.csv', encoding="utf8") as csvfile:
-    # ps_address schema:
-    # id_address, id_country, id_state, id_customer, id_manufacturer 0 - 4
-    # id_supplier, id_warehouse, alias, company, lastname 5 - 9
-    # firstname, address1, address2, postcode, city 10 - 14
-    # other, phone, phone_mobile, vat_number, dni   15 - 19
-    # date_add, date_upd, active, deleted  20 - 23
     readCSV = csv.reader(csvfile, delimiter=',')
-    with open('output_ps_address.csv', mode='w', newline='', encoding="utf8") as output_file:
+    with open('output_points.csv', mode='w', newline='', encoding="utf8") as output_file:
         output_writer = csv.writer(output_file, delimiter=';', quoting=csv.QUOTE_MINIMAL)
         next(readCSV) # skip first line
+        
         for index, row in enumerate(readCSV):
-            # print(index)
-            output_writer.writerow([f'{index}, {row[11]}, {row[13]}, {row[0]}, 0, 0, 0, my address, {row[10]}, {row[3]}, {row[2]}, {row[14]}, {row[12]}, {row[12]}, {row[9]}, NULL, {row[15]}, {row[15]}, 0, 0, {row[6]}, {row[7]}, 1, 0'])
+            # skip rows with 0 points
+            if row[8] == '0':
+                continue
+            else:
+                output_writer.writerow([f'{row[0]}, {row[1]}, {row[2]}, {row[3]}, {row[4]}, {row[5]}, {row[8]}, {row[6]}, {row[7]}'])
