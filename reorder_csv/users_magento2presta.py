@@ -5,6 +5,7 @@
 # make sure to exclude customer's csv files from version control
 
 import csv
+import secrets
 
 
 with open('magento_reward.csv', encoding="utf8") as csvfile:
@@ -22,6 +23,11 @@ with open('magento_reward.csv', encoding="utf8") as csvfile:
         next(readCSV) # skip first line
 
         for index, row in enumerate(readCSV):
+
+            # generate 32 varchar secret key
+            secret_key = secrets.token_hex(16)
+            reset_key = secrets.token_hex(20)
+
             # skip rows with 0 points
             if row[8] == '0':
                 continue
@@ -35,7 +41,7 @@ with open('magento_reward.csv', encoding="utf8") as csvfile:
                 else:
                     row[1] = 'NULL'
 
-                output_writer.writerow([f'{row[0]},1,1,{row[1]},3,{row[5]},0,NULL,,,{row[2]},{row[3]},{row[4]},,2020-04-15 17:08:32,NULL,1,,0,0,0,,1,0,0,{row[6]},{row[7]},,NULL'])
+                output_writer.writerow([f'{row[0]},1,1,{row[1]},3,{row[5]},0,NULL,NULL,NULL,{row[2]},{row[3]},{row[4]},,2020-04-15 17:08:32,NULL,1,NULL,NULL,0,NULL,0,1,0,{secret_key},NULL,1,0,0,{row[6]},{row[7]},{reset_key},2024-01-01 11:11:11'])
 
 
 with open('magento_reward.csv', encoding="utf8") as csvfile:
