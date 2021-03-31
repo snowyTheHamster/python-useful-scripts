@@ -2,12 +2,14 @@ altgraph==0.16.1
 future==0.17.1
 macholib==1.11
 pefile==2018.8.8
-Pillow
+Pillow==8.1.2
 PyAutoGUI==0.9.41
 PyGetWindow==0.0.4
 PyInstaller==3.6
 PyMsgBox==1.0.6
 PyRect==0.1.4
 PyScreeze==0.1.19
+PySimpleGUI==4.38.0
 python3-xlib==0.15
 PyTweening==1.0.3
+pywin32-ctypes==0.2.0
