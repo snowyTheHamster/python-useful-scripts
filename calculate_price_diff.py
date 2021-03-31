@@ -14,14 +14,14 @@ def diff_calculator(stake_amt, price_before, price_after, price_after_two):
     profit_loss_two = round((stake_amt * price_before * 0.999) * price_diff_two, 2)
     
 
-    print(f'P/L for: ${price_before} ----> ${price_after}')
-    print(f'${profit_loss} ( {round(profit_loss * 7.78, 1)} hkd )')
+    print(f'staked: ${stake_amt * price_before} ({int(stake_amt * price_before * 7.78)} hkd)')
+    print(f'out ${price_after}:')
+    print(f'${profit_loss} ( {int(profit_loss * 7.78)} hkd )')
     print(f'{round(price_diff_rounded, 1)}%')
     print('')
-    print(f'P/L for: ${price_before} ----> ${price_after_two}')
-    print(f'${profit_loss_two} ( {round(profit_loss_two * 7.78, 1)} hkd )')
+    print(f'out ${price_after_two}:')
+    print(f'${profit_loss_two} ( {int(profit_loss_two * 7.78)} hkd )')
     print(f'{round(price_diff_two_rounded, 1)}%')
-    print('')
     print('---')
 
 
