@@ -9,9 +9,9 @@ def diff_calculator(stake_amt, price_before, price_after, price_after_two):
     price_diff_rounded = round(price_diff * 100, 3)
     profit_loss = round((stake_amt * price_after * 0.999) - (stake_amt * price_before), 2)
 
-    price_diff_two = (price_after_two - price_before) / price_before
+    price_diff_two = (price_after_two - price_before) / price_before * 0.999
     price_diff_two_rounded = round(price_diff_two * 100, 3)
-    profit_loss_two = round((stake_amt * price_before * 0.999) * price_diff_two, 2)
+    profit_loss_two = round((stake_amt * price_after_two * 0.999) - (stake_amt * price_before), 2)
     
 
     print(f'staked: ${stake_amt * price_before} ({int(stake_amt * price_before * 7.78)} hkd)')
