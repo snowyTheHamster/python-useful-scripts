@@ -43,18 +43,30 @@ try:
         if event is None:
             break
         if event == '_CALCULATE_':
-            STAKE_AMT = float(values['_STAKE_AMT_'])
-            PRICE_BEFORE = float(values['_PRICE_BEFORE_'])
-            PRICE_AFTER = float(values['_PRICE_AFTER_'])
-            PRICE_AFTER_TWO = float(values['_PRICE_AFTER_TWO_'])
 
+            if values['_STAKE_AMT_'] == '' or values['_PRICE_BEFORE_'] == '' or values['_PRICE_AFTER_'] == '' or values['_PRICE_AFTER_TWO_'] == '':
+                print('None of the fields can be empty')
 
-            if STAKE_AMT == '' or PRICE_BEFORE == '' or PRICE_AFTER == '' or PRICE_AFTER_TWO == '':
-                print('Stake Amt or Entry price cannot be empty')
-            elif PRICE_AFTER == '' and PRICE_AFTER_TWO == '':
-                print('Both Exit prices cannot be empty')
             else:
-                diff_calculator(STAKE_AMT, PRICE_BEFORE, PRICE_AFTER, PRICE_AFTER_TWO)
+                FIELDS = [
+                    str(values['_STAKE_AMT_']),
+                    str(values['_PRICE_BEFORE_']),
+                    str(values['_PRICE_AFTER_']),
+                    str(values['_PRICE_AFTER_TWO_'])
+                    ]
+                CLEANED = []
+
+                for FIELD in FIELDS:
+                    FIELD = str(FIELD)
+                    print(FIELD)
+                    FIELD = FIELD.replace(',', '')
+                    FIELD = FIELD.replace(' ', '')
+                    FIELD = FIELD.strip('()')
+                    FIELD = float(FIELD)
+                    CLEANED.append(FIELD)
+
+                diff_calculator(CLEANED[0], CLEANED[1], CLEANED[2], CLEANED[3])
+
 except Exception as e:
     tb = traceback.format_exc()
     sg.Print(f'An error happened. Here is the info:', e, tb)
